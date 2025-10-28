@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom Styles ===== */
+
+:root {
+  --background: #f9fafb;
+  --foreground: #111827;
+  --primary: #2563eb; /* blue-600 */
+  --primary-hover: #1d4ed8;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* Apply font smoothing and overall feel */
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main layout container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+/* Header style */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Button style */
+.btn {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Email cards */
+.email-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.email-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Category tag styles */
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  color: white;
+}
+
+.category-important { background-color: #dc2626; } /* red */
+.category-promotional { background-color: #10b981; } /* green */
+.category-social { background-color: #3b82f6; } /* blue */
+.category-marketing { background-color: #f59e0b; } /* amber */
+.category-spam { background-color: #6b7280; } /* gray */
+.category-general { background-color: #9ca3af; } /* neutral */
+
+/* Input and form styling */
+input[type="text"], input[type="password"], textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Loading spinner */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
